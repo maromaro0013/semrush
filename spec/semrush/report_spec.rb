@@ -69,7 +69,7 @@ describe "Reports:" do
     end
     [:basics, :related, :organic, :fullsearch].each do |method|
       it "works with the method '#{method}'" do
-        lambda{@parsed = Semrush::Report.phrase("search+engine+optimization").send(method, :db => :us, :limit => 5)}.should_not raise_error
+        lambda{@parsed = Semrush::Report.phrase("seo").send(method, :db => :us, :limit => 5)}.should_not raise_error
         @parsed.should_not be_nil
         @parsed.should be_a_kind_of(Array)
         @parsed.count.should > 0
@@ -83,7 +83,7 @@ describe "Reports:" do
     end
     [:basics].each do |method|
       it "accepts a display date parameter" do
-        lambda{Semrush::Report.phrase("calvin & hobbs").send(method, :db => :us, :limit => 5, :display_date => Date.today.strftime('%Y%m%d'))}.should_not raise_error
+        lambda{Semrush::Report.phrase("calvin & hobbs").send(method, :db => :us, :limit => 5, :display_date => "20181015")}.should_not raise_error
       end
     end
   end
