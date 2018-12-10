@@ -1,0 +1,6 @@
+# Ignore bundler config.
+/.bundle
+
+## Environment normalisation:
+/vendor/bundle
+/vendor/bin
