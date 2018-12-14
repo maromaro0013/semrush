@@ -59,6 +59,8 @@ describe "Reports:" do
     end
   end
 
+  # don't use phrase reports
+=begin
   describe Semrush, "running phrase reports" do
     it "initializes correctly" do
       lambda{Semrush::Report.phrase("search+engine+optimization", :db => :us)}.should_not raise_error
@@ -87,6 +89,7 @@ describe "Reports:" do
       end
     end
   end
+=end
 
   describe Semrush, "parameters positions in reports" do
     it "could be set in the class method" do
